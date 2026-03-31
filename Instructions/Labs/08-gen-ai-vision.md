@@ -1,11 +1,14 @@
 ---
 lab:
-    title: 'Develop a vision-enabled chat app'
+    title: 'Develop a vision-enabled chat app (deprecated)'
     description: 'Use Azure AI Foundry to build a generative AI app that supports image input.'
+    islab: false
 ---
 
-# Develop a vision-enabled chat app
-
+# Develop a vision-enabled chat app (deprecated)
+<!--
+> **Note**: This exercise is deprecated. Consider reviewing the replacement exercise at <https://microsoftlearning.github.io/mslearn-ai-vision/Instructions/Exercises/01-gen-ai-vision.html>.
+-->
 In this exercise, you use the *Phi-4-multimodal-instruct* generative AI model to generate responses to prompts that include images. You'll develop an app that provides AI assistance with fresh produce in a grocery store by using Azure AI Foundry and the Azure AI Model Inference service.
 
 > **Note**: This exercise is based on pre-release SDK software, which may be subject to change. Where necessary, we've used specific versions of packages; which may not reflect the latest available versions. You may experience some unexpected behavior, warnings, or errors.
@@ -99,7 +102,7 @@ Now that you've deployed the model, you can use the deployment in a client appli
     git clone https://github.com/MicrosoftLearning/mslearn-ai-vision
     ```
 
-    > **Tip**: As you paste commands into the cloudshell, the ouput may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
+    > **Tip**: As you paste commands into the cloudshell, the output may take up a large amount of the screen buffer. You can clear the screen by entering the `cls` command to make it easier to focus on each task.
 
 1. After the repo has been cloned, navigate to the folder containing the application code files:  
 
@@ -212,7 +215,7 @@ Now that you've deployed the model, you can use the deployment in a client appli
     **<font color="red">You must sign into Azure - even though the cloud shell session is already authenticated.</font>**
 
     > **Note**: In most scenarios, just using *az login* will be sufficient. However, if you have subscriptions in multiple tenants, you may need to specify the tenant by using the *--tenant* parameter. See [Sign into Azure interactively using the Azure CLI](https://learn.microsoft.com/cli/azure/authenticate-azure-cli-interactively) for details.
-    
+
 1. When prompted, follow the instructions to open the sign-in page in a new tab and enter the authentication code provided and your Azure credentials. Then complete the sign in process in the command line, selecting the subscription containing your Azure AI Foundry hub if prompted.
 
 1. After you have signed in, enter the following command to run the application:
@@ -274,7 +277,7 @@ Now that you've deployed the model, you can use the deployment in a client appli
    What is this fruit? What recipes could I use it in?
     ```
 
-15. Review the response. Then enter `quit` to exit the program.
+1. Review the response. Then enter `quit` to exit the program.
 
     > **Note**: In this simple app, we haven't implemented logic to retain conversation history; so the model will treat each prompt as a new request with no context of the previous prompt.
 

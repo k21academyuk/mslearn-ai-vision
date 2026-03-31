@@ -1,10 +1,13 @@
 ---
 lab:
-    title: 'Read text in images'
+    title: 'Read text in images (deprecated)'
     description: 'Use optical character recognition (OCR) in the Azure AI Vision Image Analysis service to locate and extract text in images.'
+    islab: false
 ---
 
-# Read text in images
+# Read text in images (deprecated)
+
+> **Note**: This exercise is deprecated. Consider reviewing the QuickStart tutorial at <https://learn.microsoft.com/azure/ai-services/computer-vision/quickstarts-sdk/image-analysis-client-library-40>.
 
 Optical character recognition (OCR) is a subset of computer vision that deals with reading text in images and documents. The **Azure AI Vision** Image Analysis service provides an API for reading text, which you'll explore in this exercise.
 
@@ -27,11 +30,11 @@ If you don't already have one in your subscription, you'll need to provision an 
 1. Open the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`, and sign in using your Azure credentials. Close any welcome messages or tips that are displayed.
 1. Select **Create a resource**.
 1. In the search bar, search for `Computer Vision`, select **Computer Vision**, and create the resource with the following settings:
-    - **Subscription**: *Your Azure subscription*
-    - **Resource group**: *Create or select a resource group*
-    - **Region**: *Choose from **East US**, **West US**, **France Central**, **Korea Central**, **North Europe**, **Southeast Asia**, **West Europe**, or **East Asia**\**
-    - **Name**: *A valid name for your Computer Vision resource*
-    - **Pricing tier**: Free F0
+    * **Subscription**: *Your Azure subscription*
+    * **Resource group**: *Create or select a resource group*
+    * **Region**: *Choose from **East US**, **West US**, **France Central**, **Korea Central**, **North Europe**, **Southeast Asia**, **West Europe**, or **East Asia**\**
+    * **Name**: *A valid name for your Computer Vision resource*
+    * **Pricing tier**: Free F0
 
     \*Azure AI Vision 4.0 full feature sets are currently only available in these regions.
 

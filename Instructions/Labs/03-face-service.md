@@ -1,10 +1,13 @@
 ---
 lab:
-    title: 'Detect and analyze faces'
+    title: 'Detect and analyze faces (deprecated)'
     description: 'Use the Azure AI Vision Face service to implement face detection and analysis solutions.'
+    islab: false
 ---
 
-# Detect and analyze faces
+# Detect and analyze faces (deprecated)
+
+> **Note**: This exercise is deprecated. Consider reviewing the QuickStart tutorial at <https://learn.microsoft.com/azure/ai-services/computer-vision/quickstarts-sdk/identity-client-library>.
 
 The ability to detect and analyze human faces is a core AI capability. In this exercise, you'll explore the **Face** service to work with faces.
 
@@ -29,11 +32,11 @@ If you don't already have one in your subscription, you'll need to provision an 
 1. Open the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`, and sign in using your Azure credentials. Close any welcome messages or tips that are displayed.
 1. Select **Create a resource**.
 1. In the search bar, search for `Face`, select **Face**, and create the resource with the following settings:
-    - **Subscription**: *Your Azure subscription*
-    - **Resource group**: *Create or select a resource group*
-    - **Region**: *Choose any available region*
-    - **Name**: *A valid name for your Face resource*
-    - **Pricing tier**: Free F0
+    * **Subscription**: *Your Azure subscription*
+    * **Resource group**: *Create or select a resource group*
+    * **Region**: *Choose any available region*
+    * **Name**: *A valid name for your Face resource*
+    * **Pricing tier**: Free F0
 
 1. Create the resource and wait for deployment to complete, and then view the deployment details.
 1. When the resource has been deployed, go to it and under the **Resource management** node in the navigation pane, view its **Keys and Endpoint** page. You will need the endpoint and one of the keys from this page in the next procedure.
@@ -183,7 +186,7 @@ In this exercise, you'll complete a partially implemented client application tha
 
     ![Photograph of a statue of a person.](../media/face1.jpg)
 
-1. Observe the output, which should include the ID and attributes of each face detected. 
+1. Observe the output, which should include the ID and attributes of each face detected.
 1. Note that an image file named **detected_faces.jpg** is also generated. Use the (Azure cloud shell-specific) **download** command to download it:
 
     ```

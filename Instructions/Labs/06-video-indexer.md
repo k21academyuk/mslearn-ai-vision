@@ -1,10 +1,13 @@
 ---
 lab:
-    title: 'Analyze video'
+    title: 'Analyze video (deprecated)'
     description: 'Use Azure AI Video Indexer to analyze a video.'
+    islab: false
 ---
 
-# Analyze video
+# Analyze video (deprecated)
+
+> **Note**: This exercise is deprecated. Consider reviewing the QuickStart tutorial at <https://learn.microsoft.com/azure/azure-video-indexer/try-vi-web-portal-quickstart>.
 
 A large proportion of the data created and consumed today is in the format of video. **Azure AI Video Indexer** is an AI-powered service that you can use to index videos and extract insights from them.
 
@@ -17,13 +20,13 @@ First, you'll need to sign into the Video Indexer portal and upload a video.
 1. In your browser, open the [Video Indexer portal](https://www.videoindexer.ai) at `https://www.videoindexer.ai`.
 1. If you have an existing Video Indexer account, sign in. Otherwise, sign up for a free account and sign in using your Microsoft account (or any other valid account type). If you have difficulty signing in, try opening a private browser session.
 
-    > Note: If this is your first time signing in you might see a pop-up form asking you to verify how you're going to use the service. 
+    > Note: If this is your first time signing in you might see a pop-up form asking you to verify how you're going to use the service.
 
 1. In a new tab, download the Responsible AI video by visiting `https://aka.ms/responsible-ai-video`. Save the file.
 1. In Video Indexer, select the **Upload** option. Then select the option to **Browse for files**, select the downloaded video, and click **Add**. Change the text in the **File  name** field to **Responsible AI**. Select **Review + upload**, review the summary overview, select the checkbox to verify compliance with Microsoft's policies for facial recognition, and upload the file.
 1. After the file has uploaded, wait a few minutes while Video Indexer automatically indexes it.
 
-> **Note**: In this exercise, we're using this video to explore Video Indexer functionality; but you should take the time to watch it in full when you've finished the exercise as it contains useful information and guidance for developing AI-enabled applications responsibly! 
+> **Note**: In this exercise, we're using this video to explore Video Indexer functionality; but you should take the time to watch it in full when you've finished the exercise as it contains useful information and guidance for developing AI-enabled applications responsibly!
 
 ## Review video insights
 
@@ -111,7 +114,7 @@ To use the Video Indexer API, you need some information to authenticate requests
 
 1. In the Video Indexer portal, expand the left pane and select the **Account settings** page.
 1. Note the **Account ID** on this page - you will need it later.
-1. Open a new browser tab and go to the [Video Indexer developer portal](https://api-portal.videoindexer.ai) at `https://api-portal.videoindexer.ai, signing with your Azure credentials.
+1. Open a new browser tab and go to the [Video Indexer developer portal](https://api-portal.videoindexer.ai) at `<https://api-portal.videoindexer.ai>, signing with your Azure credentials.
 1. On the **Profile** page, view the **Subscriptions** associated with your profile.
 1. On the page with your subscription(s), observe that you have been assigned two keys (primary and secondary) for each subscription. Then select **Show** for any of the keys to see it. You will need this key shortly.
 
@@ -129,7 +132,7 @@ All interactions with the Video Indexer REST API follow the same pattern:
     ```
    code get-videos.ps1
     ```
-    
+
 1. In the PowerShell script, replace the **YOUR_ACCOUNT_ID** and **YOUR_API_KEY** placeholders with the account ID and API key values you identified previously.
 1. Observe that the *location* for a free account is "trial". If you have created an unrestricted Video Indexer account (with an associated Azure resource), you can change this to the location where your Azure resource is provisioned (for example "eastus").
 1. Review the code in the script, noting that invokes two REST methods: one to get an access token, and another to list the videos in your account.
@@ -138,7 +141,7 @@ All interactions with the Video Indexer REST API follow the same pattern:
     ```
    ./get-videos.ps1
     ```
-    
+
 1. View the JSON response from the REST service, which should contain details of the **Responsible AI** video you indexed previously.
 
 ## Use Video Indexer widgets
@@ -153,7 +156,7 @@ The Video Indexer portal is a useful interface to manage video indexing projects
     ```
 
     The file is opened in a code editor.
-   
+
 1. Note the reference to the **vb.widgets.mediator.js** script in the header - this script enables multiple Video Indexer widgets on the page to interact with one another.
 1. In the Video Indexer portal, return to the **Media files** page and open your **Responsible AI** video.
 1. Under the video player, select **&lt;/&gt; Embed** to view the HTML iframe code to embed the widgets.
@@ -172,4 +175,3 @@ The Video Indexer portal is a useful interface to manage video indexing projects
     ![Video Indexer widgets in a web page](../media/video-indexer-widgets.png)
 
 1. Experiment with the widgets, using the **Insights** widget to search for insights and jump to them in the video.
-

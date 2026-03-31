@@ -1,10 +1,13 @@
 ---
 lab:
-    title: 'Classify images'
+    title: 'Classify images (deprecated)'
     description: "Use the Azure AI Custom Vision service to train an image classification model."
+    islab: false
 ---
 
-# Classify images
+# Classify images (deprecated)
+
+> **Note**: This exercise is deprecated. Consider reviewing the QuickStart tutorial at <https://learn.microsoft.com/azure/ai-services/custom-vision-service/getting-started-build-a-classifier>.
 
 The **Azure AI Custom Vision** service enables you to create computer vision models that are trained on your own images. You can use it to train *image classification* and *object detection* models; which you can then publish and consume from applications.
 
@@ -28,13 +31,13 @@ Before you can train a model, you will need Azure resources for *training* and *
 1. Open the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`, and sign in using your Azure credentials. Close any welcome messages or tips that are displayed.
 1. Select **Create a resource**.
 1. In the search bar, search for `Custom Vision`, select **Custom Vision**, and create the resource with the following settings:
-    - **Create options**: Both
-    - **Subscription**: *Your Azure subscription*
-    - **Resource group**: *Create or select a resource group*
-    - **Region**: *Choose any available region*
-    - **Name**: *A valid name for your Custom Vision resource*
-    - **Training pricing tier**: F0
-    - **Prediction pricing tier**: F0
+    * **Create options**: Both
+    * **Subscription**: *Your Azure subscription*
+    * **Resource group**: *Create or select a resource group*
+    * **Region**: *Choose any available region*
+    * **Name**: *A valid name for your Custom Vision resource*
+    * **Training pricing tier**: F0
+    * **Prediction pricing tier**: F0
 
 1. Create the resource and wait for deployment to complete, and then view the deployment details. Note that two Custom Vision resources are provisioned; one for training, and another for prediction.
 
@@ -49,12 +52,12 @@ To train an image classification model, you need to create a Custom Vision proje
 1. Open a new browser tab (keeping the Azure portal tab open - you'll return to it later).
 1. In the new browser tab, open the [Custom Vision portal](https://customvision.ai) at `https://customvision.ai`. If prompted, sign in using your Azure credentials and agree to the terms of service.
 1. In the Custom Vision portal, create a new project with the following settings:
-    - **Name**: `Classify Fruit`
-    - **Description**: `Image classification for fruit`
-    - **Resource**: *Your Custom Vision resource*
-    - **Project Types**: Classification
-    - **Classification Types**: Multiclass (single tag per image)
-    - **Domains**: Food
+    * **Name**: `Classify Fruit`
+    * **Description**: `Image classification for fruit`
+    * **Resource**: *Your Custom Vision resource*
+    * **Project Types**: Classification
+    * **Classification Types**: Multiclass (single tag per image)
+    * **Domains**: Food
 
 ### Upload and tag images
 
@@ -86,8 +89,8 @@ To train an image classification model, you need to create a Custom Vision proje
     ![Screenshot of an image with a class prediction of apple.](../media/test-apple.jpg)
 
 1. Try testing the following images:
-    - `https://aka.ms/test-banana`
-    - `https://aka.ms/test-orange`
+    * `https://aka.ms/test-banana`
+    * `https://aka.ms/test-orange`
 
 1. Close the **Quick Test** window.
 
@@ -168,11 +171,11 @@ The Custom Vision portal provides a convenient user interface that you can use t
     ```
 
 1. Note the following details in the code file:
-    - The namespaces for the Azure AI Custom Vision SDK are imported.
-    - The **Main** function retrieves the configuration settings, and uses the key and endpoint to create an authenticated.
-    - **CustomVisionTrainingClient**, which is then used with the project ID to create a **Project** reference to your project.
-    - The **Upload_Images** function retrieves the tags that are defined in the Custom Vision project and then uploads image files from correspondingly named folders to the project, assigning the appropriate tag ID.
-    - The **Train_Model** function creates a new training iteration for the project and waits for training to complete.
+    * The namespaces for the Azure AI Custom Vision SDK are imported.
+    * The **Main** function retrieves the configuration settings, and uses the key and endpoint to create an authenticated.
+    * **CustomVisionTrainingClient**, which is then used with the project ID to create a **Project** reference to your project.
+    * The **Upload_Images** function retrieves the tags that are defined in the Custom Vision project and then uploads image files from correspondingly named folders to the project, assigning the appropriate tag ID.
+    * The **Train_Model** function creates a new training iteration for the project and waits for training to complete.
 
 1. Close the code editor (*CTRL+Q*) and enter the following command to run the program:
 
@@ -190,8 +193,8 @@ Now you're ready to publish your trained model and use it in a client applicatio
 ### Publish the image classification model
 
 1. In the Custom Vision portal, on the **Performance** page,  click **&#128504; Publish** to publish the trained model with the following settings:
-    - **Model name**: `fruit-classifier`
-    - **Prediction Resource**: *The **prediction** resource you created previously which ends with "-Prediction" (<u>not</u> the training resource)*.
+    * **Model name**: `fruit-classifier`
+    * **Prediction Resource**: *The **prediction** resource you created previously which ends with "-Prediction" (<u>not</u> the training resource)*.
 1. At the top left of the **Project Settings** page, click the *Projects Gallery* (&#128065;) icon to return to the Custom Vision portal home page, where your project is now listed.
 1. On the Custom Vision portal home page, at the top right, click the *settings* (&#9881;) icon to view the settings for your Custom Vision service. Then, under **Resources**, find your *prediction* resource which ends with "-Prediction" (<u>not</u> the training resource) to determine its **Key** and **Endpoint** values (you can also obtain this information by viewing the resource in the Azure portal).
 
@@ -231,9 +234,9 @@ Now you're ready to publish your trained model and use it in a client applicatio
     ```
 
 1. Review the code, noting the following details:
-    - The namespaces for the Azure AI Custom Vision SDK are imported.
-    - The **Main** function retrieves the configuration settings, and uses the key and endpoint to create an authenticated **CustomVisionPredictionClient**.
-    - The prediction client object is used to predict a class for each image in the **test-images** folder, specifying the project ID and model name for each request. Each prediction includes a probability for each possible class, and only predicted tags with a probability greater than 50% are displayed.
+    * The namespaces for the Azure AI Custom Vision SDK are imported.
+    * The **Main** function retrieves the configuration settings, and uses the key and endpoint to create an authenticated **CustomVisionPredictionClient**.
+    * The prediction client object is used to predict a class for each image in the **test-images** folder, specifying the project ID and model name for each request. Each prediction includes a probability for each possible class, and only predicted tags with a probability greater than 50% are displayed.
 
 1. Close the code editor and enter the following command to run the program:
 

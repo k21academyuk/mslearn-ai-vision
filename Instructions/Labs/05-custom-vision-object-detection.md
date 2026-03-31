@@ -1,10 +1,13 @@
 ---
 lab:
-    title: 'Detect objects in images'
+    title: 'Detect objects in images' (deprecated)
     description: 'Use the Azure AI Custom Vision service to train an object detection model.'
+    islab: false
 ---
 
-# Detect objects in images
+# Detect objects in images (deprecated)
+
+> **Note**: This exercise is deprecated. Consider reviewing the QuickStart tutorial at <https://learn.microsoft.com/azure/ai-services/custom-vision-service/get-started-build-detector>.
 
 The **Azure AI Custom Vision** service enables you to create computer vision models that are trained on your own images. You can use it to train *image classification* and *object detection* models; which you can then publish and consume from applications.
 
@@ -28,13 +31,13 @@ Before you can train a model, you will need Azure resources for *training* and *
 1. Open the [Azure portal](https://portal.azure.com) at `https://portal.azure.com`, and sign in using your Azure credentials. Close any welcome messages or tips that are displayed.
 1. Select **Create a resource**.
 1. In the search bar, search for `Custom Vision`, select **Custom Vision**, and create the resource with the following settings:
-    - **Create options**: Both
-    - **Subscription**: *Your Azure subscription*
-    - **Resource group**: *Create or select a resource group*
-    - **Region**: *Choose any available region*
-    - **Name**: *A valid name for your Custom Vision resource*
-    - **Training pricing tier**: F0
-    - **Prediction pricing tier**: F0
+    * **Create options**: Both
+    * **Subscription**: *Your Azure subscription*
+    * **Resource group**: *Create or select a resource group*
+    * **Region**: *Choose any available region*
+    * **Name**: *A valid name for your Custom Vision resource*
+    * **Training pricing tier**: F0
+    * **Prediction pricing tier**: F0
 
 1. Create the resource and wait for deployment to complete, and then view the deployment details. Note that two Custom Vision resources are provisioned; one for training, and another for prediction.
 
@@ -49,11 +52,11 @@ To train an object detection model, you need to create a Custom Vision project b
 1. Open a new browser tab (keeping the Azure portal tab open - you'll return to it later).
 1. In the new browser tab, open the [Custom Vision portal](https://customvision.ai) at `https://customvision.ai`. If prompted, sign in using your Azure credentials and agree to the terms of service.
 1. Create a new project with the following settings:
-    - **Name**: `Detect Fruit`
-    - **Description**: `Object detection for fruit.`
-    - **Resource**: *Your Custom Vision resource*
-    - **Project Types**: Object Detection
-    - **Domains**: General
+    * **Name**: `Detect Fruit`
+    * **Description**: `Object detection for fruit.`
+    * **Resource**: *Your Custom Vision resource*
+    * **Project Types**: Object Detection
+    * **Domains**: General
 1. Wait for the project to be created and opened in the browser.
 
 ## Upload and tag images
@@ -152,7 +155,7 @@ You can use the UI in the Custom Vision portal to tag your images, but many AI d
     ```
    code tagged-images.json
     ```
-    
+
      JSON defines a list of images, each containing one or more tagged regions. Each tagged region includes a tag name, and the top and left coordinates and width and height dimensions of the bounding box containing the tagged object.
 
     > **Note**: The coordinates and dimensions in this file indicate relative points on the image. For example, a *height* value of 0.7 indicates a box that is 70% of the height of the image. Some tagging tools generate other formats of file in which the coordinate and dimension values represent pixels, inches, or other units of measurements.
@@ -166,9 +169,9 @@ You can use the UI in the Custom Vision portal to tag your images, but many AI d
     ```
 
 1. Note the following details in the code file:
-    - The namespaces for the Azure AI Custom Vision SDK are imported.
-    - The **Main** function retrieves the configuration settings, and uses the key and endpoint to create an authenticated **CustomVisionTrainingClient**, which is then used with the project ID to create a **Project** reference to your project.
-    - The **Upload_Images** function extracts the tagged region information from the JSON file and uses it to create a batch of images with regions, which it then uploads to the project.
+    * The namespaces for the Azure AI Custom Vision SDK are imported.
+    * The **Main** function retrieves the configuration settings, and uses the key and endpoint to create an authenticated **CustomVisionTrainingClient**, which is then used with the project ID to create a **Project** reference to your project.
+    * The **Upload_Images** function extracts the tagged region information from the JSON file and uses it to create a batch of images with regions, which it then uploads to the project.
 
 1. Close the code editor (*CTRL+Q*) and enter the following command to run the program:
 
@@ -204,8 +207,8 @@ Now you're ready to publish your trained model and use it in a client applicatio
 ### Publish the object detection model
 
 1. In the Custom Vision portal, on the **Performance** page,  click **&#128504; Publish** to publish the trained model with the following settings:
-    - **Model name**: `fruit-detector`
-    - **Prediction Resource**: *The **prediction** resource you created previously which ends with "-Prediction" (<u>not</u> the training resource)*.
+    * **Model name**: `fruit-detector`
+    * **Prediction Resource**: *The **prediction** resource you created previously which ends with "-Prediction" (<u>not</u> the training resource)*.
 1. At the top left of the **Project Settings** page, click the *Projects Gallery* (&#128065;) icon to return to the Custom Vision portal home page, where your project is now listed.
 1. On the Custom Vision portal home page, at the top right, click the *settings* (&#9881;) icon to view the settings for your Custom Vision service. Then, under **Resources**, find your *prediction* resource which ends with "-Prediction" (<u>not</u> the training resource) to determine its **Key** and **Endpoint** values (you can also obtain this information by viewing the resource in the Azure portal).
 
@@ -250,9 +253,9 @@ Now that you've published the image classification model, you can use it from a 
     ```
 
 1. Review the code, noting the following details:
-    - The namespaces for the Azure AI Custom Vision SDK are imported.
-    - The **Main** function retrieves the configuration settings, and uses the key and endpoint to create an authenticated **CustomVisionPredictionClient**.
-    - The prediction client object is used to get object detection predictions for the **produce.jpg** image, specifying the project ID and model name in the request. The predicted tagged regions are then drawn on the image, and the result is saved as **output.jpg**.
+    * The namespaces for the Azure AI Custom Vision SDK are imported.
+    * The **Main** function retrieves the configuration settings, and uses the key and endpoint to create an authenticated **CustomVisionPredictionClient**.
+    * The prediction client object is used to get object detection predictions for the **produce.jpg** image, specifying the project ID and model name in the request. The predicted tagged regions are then drawn on the image, and the result is saved as **output.jpg**.
 1. Close the code editor and enter the following command to run the program:
 
     ```
@@ -277,7 +280,7 @@ If you're not using the Azure resources created in this lab for other training m
 1. Open the Azure portal at `https://portal.azure.com`, and in the top search bar, search for the resources you created in this lab.
 
 1. On the resource page, select **Delete** and follow the instructions to delete the resource. Alternatively, you can delete the entire resource group to clean up all resources at the same time.
-   
+
 ## More information
 
 For more information about object detection with the Custom Vision service, see the [Custom Vision documentation](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/).
