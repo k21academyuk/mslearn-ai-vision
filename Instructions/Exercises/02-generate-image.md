@@ -51,7 +51,7 @@ Microsoft Foundry uses projects to organize models, resources, data, and other a
 
 You'll need a model that can generate images.
 
-1. In the **Start building** menu, select **Find models** (or on the **Discover** page, select the **Models** tab) to view the Microsoft Foundry model catalog.
+1. On the project home page, in the **Start building** menu, select **Find models** to view the Microsoft Foundry model catalog.
 
 1. Search for and deploy the `FLUX.1-Kontext-pro` model using the default settings. Deployment may take a minute or so.
 
@@ -167,7 +167,7 @@ The initial application files you'll need to develop the translation application
         n=1
     )
 
-   json_response = json.loads(result.model_dump_json())
+   json_response = json.loads(img.model_dump_json())
    image_data = json_response["data"][0].get("b64_json")
    image_data_in_bytes = base64.b64decode(image_data)
     ```

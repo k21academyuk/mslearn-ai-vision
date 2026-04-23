@@ -53,7 +53,7 @@ Microsoft Foundry uses projects to organize models, resources, data, and other a
 
 You'll need a model that can process image-based input.
 
-1. In the **Start building** menu, select **Find models** (or on the **Discover** page, select the **Models** tab) to view the Microsoft Foundry model catalog.
+1. Now you're ready to **Start building**. Select **Find models** (or on the **Discover** page, select the **Models** tab) to view the Microsoft Foundry model catalog.
 
 1. Search for and deploy the `gpt-4.1` model using the default settings. Deployment may take a minute or so.
 
@@ -74,6 +74,8 @@ Now you can test your model deployment with an image-based prompt in the chat pl
 1. In the main chat session panel, under the chat input box, use the attach button (**&#128206;**) to upload the *mango.jpeg* image file, and then add the text `What desserts could I make with this fruit?` and submit the prompt.
 
     ![Screenshot of the chat playground page.](../media/chat-playground-image-new.png)
+
+    > **NOTE**: If the error *ERR_BAD_REQUEST: The provided data does not match the expected schema* is returned, try switching to the *Classic* portal by de-selecting the **New Foundry** option. In the classic portal, open the **Chat playground** in the **Playgrounds** page.
 
 1. Review the response, which should hopefully provide relevant guidance for desserts you can make using a mango.
 
